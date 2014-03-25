@@ -1,12 +1,6 @@
-function BibliotecaController( $scope, $window, $http ) {
+function BibliotecaController( $scope, $http ) {
     var inicializar = function() {
         $scope.livro = { titulo: '', autor: '' };
-//        $scope.livros = [
-//            { _id: '1', titulo: 'Memórias de um sargento de milícias', autor: 'Manuel Antônio de Almeida' },
-//            { _id: '2', titulo: 'Iracema', autor: 'José de Alencar' },
-//            { _id: '3', titulo: 'Dom Casmurro', autor: 'Machado de Assis' },
-//            { _id: '4', titulo: 'Memórias Póstumas de Brás Cubas', autor: 'Machado de Assis' }
-//        ];
 
         var url = getUrl( '/livros' );
         

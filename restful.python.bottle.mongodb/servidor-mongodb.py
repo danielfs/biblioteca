@@ -65,6 +65,6 @@ def listar():
 
 @route( '/', method = 'GET' )
 def saudacao():
-    return 'Isso funciona.'
+    return 'Funcionou?'
 
 run( host = 'localhost', port = 8080 )
