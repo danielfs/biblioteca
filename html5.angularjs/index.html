@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <title>Biblioteca AngularJS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="js/angular.min.js"></script>
+        <script src="js/biblioteca.js"></script>
+    </head>
+    <body ng-controller="BibliotecaController">
+        <h3>Livros</h3>
+        
+        <form>
+            <input type="text" ng-model="livro._id" disabled />
+            <input type="text" ng-model="livro.titulo" placeholder="digite o título do livro" />
+            <input type="text" ng-model="livro.autor" placeholder="digite o nome do autor" />
+            
+            <input type="submit" ng-click="salvar()" value="salvar" />
+        </form>
+        
+        <br />
+        
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Título</th>
+                    <th>Nome do Autor</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="livro in livros">
+                    <td>{{ livro._id }}</td>
+                    <td>{{ livro.titulo }}</td>
+                    <td>{{ livro.autor }}</td>
+                    <td>[ <a href="#" ng-click="editar( livro )">editar</a> - <a href="#" ng-click="excluir( livro )">excluir</a> ]</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Quantidade de livros</td>
+                    <td>{{ livros.length }}</td>
+                </tr>
+            </tfoot>
+        </table>
+        
+    </body>
+</html>
